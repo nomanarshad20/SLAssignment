@@ -18,8 +18,12 @@ import com.system.test.assignment.common.ResponseDTO;
 @RequestMapping("/api/player")
 public class PlayerControllerImpl {
 
+	private PlayerService playerService;
+
 	@Autowired
-	PlayerService playerService;
+	public PlayerControllerImpl(PlayerService playerService) {
+		this.playerService = playerService;
+	}
 
 	@RequestMapping(value = "/all/list", method = RequestMethod.GET)
 	public ResponseEntity<Object> getAllPlayers() {
@@ -73,7 +77,4 @@ public class PlayerControllerImpl {
 		}
 	}
 
-	
-	
-	
 }

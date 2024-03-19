@@ -1,6 +1,5 @@
 package com.system.test.assignment.sports;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +17,12 @@ import com.system.test.assignment.dto.SportsDTO;
 @RequestMapping("/api/sports")
 public class SportsControllerImpl {
 
+	private SportsService sportsService;
+
 	@Autowired
-	SportsService sportsService;
-	
-	@Autowired
-	private ModelMapper modelMapper;
+	public SportsControllerImpl(SportsService sportsService) {
+		this.sportsService = sportsService;
+	}
 
 	@RequestMapping(value = "/all/list", method = RequestMethod.GET)
 	public ResponseEntity<Object> getAllSports() {
@@ -84,14 +84,14 @@ public class SportsControllerImpl {
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public ResponseEntity<Object> updateSportAndPlayers(@RequestBody  SportsDTO sportsDTOJson ) {
+	public ResponseEntity<Object> updateSportAndPlayers(@RequestBody SportsDTO sportsDTOJson) {
 		try {
-		//	System.out.println( sportsDTOJson);
-		//	SportsDTO sportsDTO =modelMapper.map(sportsDTOJson, SportsDTO.class);
-			System.out.println( sportsDTOJson.toString());
-			
-			return ResponseEntity.ok().body(
-					ResponseDTO.success(sportsService.updateSportAndPlayers(sportsDTOJson), "sports updated successfuly"));
+			// System.out.println( sportsDTOJson);
+			// SportsDTO sportsDTO =modelMapper.map(sportsDTOJson, SportsDTO.class);
+			System.out.println(sportsDTOJson.toString());
+
+			return ResponseEntity.ok().body(ResponseDTO.success(sportsService.updateSportAndPlayers(sportsDTOJson),
+					"sports updated successfuly"));
 		} catch (Exception e) {
 			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
 		}

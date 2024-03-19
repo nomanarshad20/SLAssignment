@@ -16,9 +16,7 @@ public interface SportsRepositoryInterface extends JpaRepository<SportsEntity, I
 
 	@Query("SELECT s FROM SportsEntity s WHERE SIZE(s.players) = 0")
 	List<SportsEntity> findSportsWithNoPlayers();
-	
-	
+
 	List<SportsEntity> findSportsByName(String name);
-	
 
 }
