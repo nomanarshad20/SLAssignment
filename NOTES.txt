@@ -1,6 +1,32 @@
 
+
+Swager UI Link
 http://localhost:8080/swagger-ui/index.html#/
 
 https://github.com/mshah-ap
 
 https://docs.google.com/document/d/17gOnv9K7hWqUucE73OqezVUBE8x49_p94aIiq3Tlba4/edit
+
+
+Test Available for APIa:
+
+GET  http://localhost:8080/api/player/gender/male/level/10/age/23
+
+GET   http://localhost:8080/api/player/list?page=0&size=3
+
+GET   http://localhost:8080/api/sports/multiplayer/list
+
+GET  http://localhost:8080/api/sports/noplayer/list
+
+GET  http://localhost:8080/api/sports/list/Hockey
+
+GET   http://localhost:8080/api/player/list/nosport
+
+DELL  http://localhost:8080/api/sports/1
+
+GET  http://localhost:8080/api/player/list/catagory/name/Hockey?page=0&size=3
+
+GET  http://localhost:8080/api/player/all/list
+
+POST  http://localhost:8080/api/sports/update    payload   {"id":2,"name":"Hockeyy"}
+

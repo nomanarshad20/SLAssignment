@@ -59,7 +59,7 @@ public class SportsServiceImpl implements SportsService {
 		PlayerEntity pe1 = new PlayerEntity();
 		pe1.setName("nasir");
 		pe1.setEmail("nasir@dfd.com");
-		pe1.setLevel(20);
+		pe1.setLevel(2);
 		pe1.setAge(30);
 		pe1.setGender(StringConstants.MALE);
 		pe1.setSports(list);

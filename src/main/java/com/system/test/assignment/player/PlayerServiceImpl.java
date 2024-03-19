@@ -69,8 +69,6 @@ public class PlayerServiceImpl implements PlayerService {
 
 	@Override
 	public PlayerDTO createPlayer(PlayerDTO playerDTO) {
-		Set<SportsEntity> sportsEntity = new HashSet<>();
-
 		PlayerEntity pe = new PlayerEntity();
 		pe.setName(playerDTO.getName());
 		pe.setEmail(playerDTO.getEmail());
